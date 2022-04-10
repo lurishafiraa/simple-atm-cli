@@ -1,5 +1,4 @@
-from model.user_atm import users
-from model.user_atm import user_id
+from model.user_atm import *
 
 def cek_login(p):
     for user in users:
@@ -29,7 +28,7 @@ def transfer_uang(uang, no_rekening):
         if users[index1]['saldo'] >= int(uang):
             users[index1]['saldo'] = users[index1]['saldo'] - int(uang)
             users[index2]['saldo'] = users[index2]['saldo'] + int(uang)
-            print("Anda berhasil mentransfer uang Rp." + str(uang) + " ke Rekening " + no_rekening)
+            print("Anda berhasil transfer sebesar Rp." + str(uang) + " ke Rekening " + no_rekening)
             print("sisa saldo anda adalah Rp.", users[index1]['saldo'])
         else:
             print("Maaf saldo anda tidak cukup")
